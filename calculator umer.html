@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #43CBFF 0%, #9708CC 100%);
+        }
+
+        .calculator {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .calculator:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: 60px;
+            border-radius: 12px;
+            border: none;
+            padding: 0 15px;
+            font-size: 1.8rem;
+            text-align: right;
+            margin-bottom: 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="button"] {
+            width: 60px;
+            height: 60px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        input[type="button"]:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="button"]:active {
+            transform: translateY(0px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .operator {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .operator:hover {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .equal {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .equal:hover {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .clear {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        .clear:hover {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <form name="CALCULATOR">
+            <input type="text" name="answer" readonly><br>
+
+            <!-- Row 1 -->
+            <input type="button" value="9" onclick="document.CALCULATOR.answer.value+='9'">
+            <input type="button" value="8" onclick="document.CALCULATOR.answer.value+='8'">
+            <input type="button" value="7" onclick="document.CALCULATOR.answer.value+='7'">
+            <input type="button" value="+" class="operator" onclick="document.CALCULATOR.answer.value+='+'"><br>
+
+            <!-- Row 2 -->
+            <input type="button" value="6" onclick="document.CALCULATOR.answer.value+='6'">
+            <input type="button" value="5" onclick="document.CALCULATOR.answer.value+='5'">
+            <input type="button" value="4" onclick="document.CALCULATOR.answer.value+='4'">
+            <input type="button" value="-" class="operator" onclick="document.CALCULATOR.answer.value+='-'"><br>
+
+            <!-- Row 3 -->
+            <input type="button" value="3" onclick="document.CALCULATOR.answer.value+='3'">
+            <input type="button" value="2" onclick="document.CALCULATOR.answer.value+='2'">
+            <input type="button" value="1" onclick="document.CALCULATOR.answer.value+='1'">
+            <input type="button" value="*" class="operator" onclick="document.CALCULATOR.answer.value+='*'"><br>
+
+            <!-- Row 4 -->
+            <input type="button" value="0" onclick="document.CALCULATOR.answer.value+='0'">
+            <input type="button" value="/" class="operator" onclick="document.CALCULATOR.answer.value+='/'">
+            <input type="button" value="C" class="clear" onclick="document.CALCULATOR.answer.value=''">
+            <input type="button" value="=" class="equal" onclick="document.CALCULATOR.answer.value=eval(document.CALCULATOR.answer.value)">
+        </form>
+    </div>
+</body>
+</html>
